@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  ///variable object for questions and answers
   var ques = [
     {
       question: "Which music video premiered in 27 countries in 1991",
@@ -17,16 +18,17 @@ $(document).ready(function () {
     },
 
   ];
+
+  //get random  question and answer from object and putting them in one variable
   var questionanswer;
 
   function displayques() {
     questionanswer = ques[Math.floor((Math.random() * ques.length))];
     console.log(questionanswer)
-    // $("#question-holder").append("<div>" + question + "</div>");
 
     return questionanswer
   }
-
+//posts questions on screen
   function appendque() {
     $("#question-holder").html("<h1>" + questionanswer.question + "</h1>");
     for (var i = 0; i < questionanswer.answers.length; i++) {
@@ -34,6 +36,7 @@ $(document).ready(function () {
     }
 
   }
+  //checks if answer ia correct answer
   var canswer
 
   function checker() {
@@ -52,24 +55,30 @@ $(document).ready(function () {
 
 
   $("#start").click(function () {
-       
+    ///start of questions
+
     setTimeout(
       function () {
-        setInterval(
-          function () {
-            displayques();
-            appendque();
+        displayques();
+        appendque();
+        changeque();
+      }, 2000)
 
-          },6000 )
-    
+
+    //count down  of clock         
+    setTimeout(
+      function () {
+        ~
         setInterval(
           function () {
             decrement();
-          }, 1000)
+          }, 1500)
       }
-      , 4000)
-  })
+      , 2000)
 
+
+  })
+//calls function to check correts answer on click
 
   $("#question-holder").on('click', ".btn", function () {
 
@@ -78,17 +87,17 @@ $(document).ready(function () {
   });
 
 
-  var number =10;
+  var number = 10;
+  ///function that changes different questions on the screen
+  function changeque() {
 
-  //  Variable that will hold our interval ID when we execute
-  //  the "run" function
-  var intervalId;
+    setInterval(
+      function () {
+        displayques();
+        appendque();
+      }, 11000)
 
-
-
-
-
-
+  }
 
   //  The decrement function.
   function decrement() {
@@ -96,17 +105,14 @@ $(document).ready(function () {
     //  Decrease number by one.
     number--;
 
-    //  Show the number in the #show-number tag.
+    //  Show the number in the #timer tag.
     $("#timer").html(number)
     if (number === 0) {
 
       //  ...run the stop function.
       stop();
 
-      //  Alert the user that time is up.
-     ;
     }
-
 
 
   }
@@ -117,13 +123,12 @@ $(document).ready(function () {
     //  Clears our intervalId
     //  We just pass the name of the interval
     //  to the clearInterval function.
-    clearInterval(number=10);
+    clearInterval(number = 10);
+
+
+
+
   }
-
-  //  Execute the run function.
-
-
-
 
 
 
