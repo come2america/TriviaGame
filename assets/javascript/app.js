@@ -29,19 +29,19 @@ $(document).ready(function () {
     return questionanswer
   }
 //posts questions on screen
-  function appendque() {
+  function appendque() { 
     $("#question-holder").html("<h1>" + questionanswer.question + "</h1>");
     for (var i = 0; i < questionanswer.answers.length; i++) {
       $("#question-holder").append("<button class='btn'>" + questionanswer.answers[i] + "</button>");
     }
-    $("#question-holder").append("<button id ='can'>" + questionanswer.correctAnswer + "</button>");
+    $("#question-holder").append("<button class='btn'  id ='can'>" + questionanswer.correctAnswer + "</button>");
   }
   //checks if answer ia correct answer
 
 
   function checker() {
     
-    if ($(this).attr("#can") ){
+    if ($(this).attr("id= 'can'") ){
 
       console.log("good job")
     }
@@ -105,7 +105,7 @@ $(document).ready(function () {
     $("#timer").html(number)
     if (number === 0) {
       stop();
-changeque()
+changeque()//change screen too
     }
     
 
@@ -121,11 +121,9 @@ changeque()
     //  to the clearInterval function.
     clearInterval(number = 10);
 
-
-
-
   }
 
+  
 
 
 
