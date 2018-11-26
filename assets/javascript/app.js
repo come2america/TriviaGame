@@ -3,17 +3,17 @@ $(document).ready(function () {
   var ques = [
     {
       question: "Which music video premiered in 27 countries in 1991",
-      answers: ["Scream", "Hollywood Tonight", "We R The World", "Black or White"],
+      answers: ["Scream", "Hollywood Tonight", "We R The World"],
       correctAnswer: "Black or White"
     },
     {
       question: "Which song's short film in 1988 earned the People's Choice Award",
-      answers: ["Thriller", "Beat It", "Remember The Time", "Smooth Crimminal"],
+      answers: ["Thriller", "Beat It", "Remember The Time"],
       correctAnswer: "Smooth Crimminal"
     },
     {
       question: "Which song has parts recorded with him lying in bed, under covers ",
-      answers: ["Speechless", "Leave Me Alone", "Cry", "I Just Can't Stop Loving You"],
+      answers: ["Speechless", "Leave Me Alone", "Cry"],
       correctAnswer: "I Just Can't Stop Loving You"
     },
 
@@ -34,20 +34,19 @@ $(document).ready(function () {
     for (var i = 0; i < questionanswer.answers.length; i++) {
       $("#question-holder").append("<button class='btn'>" + questionanswer.answers[i] + "</button>");
     }
-
+    $("#question-holder").append("<button id ='can'>" + questionanswer.correctAnswer + "</button>");
   }
   //checks if answer ia correct answer
-  var canswer
+
 
   function checker() {
-    canswer = ques.correctAnswer
-    if ($(".btn") === canswer) {
+    
+    if ($(this).attr("#can") ){
 
       console.log("good job")
     }
     else {
       console.log("bad job")
-
     }
 
   }
@@ -57,18 +56,15 @@ $(document).ready(function () {
   $("#start").click(function () {
     ///start of questions
 
-    setTimeout(
-      function () {
         displayques();
         appendque();
-        changeque();
-      }, 2000)
+
 
 
     //count down  of clock         
     setTimeout(
       function () {
-        ~
+        
         setInterval(
           function () {
             decrement();
@@ -80,22 +76,22 @@ $(document).ready(function () {
   })
 //calls function to check correts answer on click
 
-  $("#question-holder").on('click', ".btn", function () {
+  $("#question-holder").on('click', ".btn", function (event) {
 
-    checker();
+    checker(event);
 
   });
 
 
   var number = 10;
-  ///function that changes different questions on the screen
+  ///function that changes different questions  on the screen
   function changeque() {
 
-    setInterval(
+ setTimeout(
       function () {
         displayques();
         appendque();
-      }, 11000)
+      }, 1000)
 
   }
 
@@ -108,11 +104,11 @@ $(document).ready(function () {
     //  Show the number in the #timer tag.
     $("#timer").html(number)
     if (number === 0) {
-
-      //  ...run the stop function.
       stop();
-
+changeque()
     }
+    
+
 
 
   }
