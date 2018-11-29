@@ -1,5 +1,6 @@
 
-body { /* Visual */ background: lightgrey;}
+body { text-align: center;
+    /* Visual */ background: lightgrey;}
 
 #image-holder {
 
