@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="en-us">
-
+ 
 <head>
 
     <meta charset="UTF-8">
-    <title>Slideshow</title>
+    <title>Trivia Game</title>
 
     <style>
 
@@ -37,9 +37,13 @@
       button {
 
         /* Box-model */
-        width: 200px;
-        height: 100px;
+        width: 150px;
+        height: 60px;
 
+      }
+      img {
+          width:500;
+          height: 700;
       }
 
     </style>
@@ -47,18 +51,21 @@
 </head>
 
 <body>
-    <h1> Michael Jackson Twitter Trivia</h1>
+    <img src="https://i.gifer.com/GKtg.gif">
+    <h1> Michael Jackson SpeakEasy Trivia</h1>
     <button id="start">Start Game</button>
-
+<button id=restart> Restart</button>
     <h2> Time Left:<span id="timer">
             10
         </span> </h2>
 
+<div id=playarea>
+
 
     <div id="question-holder">
 
-    </div>
-
+    </div> 
+</div>
 
 
     <!--     <div class= panel id=que1>
