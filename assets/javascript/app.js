@@ -29,9 +29,37 @@ $(document).ready(function () {
     },
     {
       question: "Which album is said to invent modern pop as we know it",
-      answers: ["Off the Wall", "Michael", "Thriller", "Ben"],
+      answers: ["Off the Wall", "Thriller", "Michael",  "Ben"],
       correctAnswer: 0
     },
+
+    {
+      question: "Which album made Michael the King of Pop",
+      answers: ["Off the Wall", "Xscape", "Thriller", "Invincible"],
+      correctAnswer: 2
+    },
+
+   {
+      question: "Which album is said to make Michael's popularity on par with Apple Pie and Football",
+      answers: ["Dangerous", "Michael", "Bad", "Xsacpe "],
+      correctAnswer: 0
+    },
+
+    {
+      question: "What song was the first single ever to debut atop on Billboard",
+      answers: ["Off the Wall", "You Are Not Alone", "Thriller", "Bad"],
+      correctAnswer: 1
+    },
+
+ 
+
+    {
+      question: "What song in 1995 remained on Top 100 for 24 weeks",
+      answers: ["Off the Wall", "Beat It", "Man in the Mirror", "Scream"],
+      correctAnswer: 3
+    },
+
+
 
   ];
   //get random  question and answer from object and putting them in one variable
@@ -51,6 +79,7 @@ $(document).ready(function () {
     for (var i = 0; i < questionanswer.answers.length; i++) {
       $("#question-holder").append("<button class='question-btn' data-index = '"+ i +"'>" + questionanswer.answers[i] + "</button>");
     }
+  
   }
   //checks if answer ia correct answer
 
@@ -85,12 +114,13 @@ var wronganswers=0
 
     checker($(this).attr("data-index")); 
    changeque(); 
-    number=10;
+    number=15;
     endscore();
+   
   });
 
     
-  var number = 10;
+  var number = 15;
   ///function that changes different questions  on the screen
   function changeque() {
 
@@ -113,7 +143,7 @@ var wronganswers=0
     $("#timer").html(number)
     if (number === 0) {
       stop();
-      number = 10;
+      number = 15;
       changeque();
       clockTimer = setInterval(
         function () {
